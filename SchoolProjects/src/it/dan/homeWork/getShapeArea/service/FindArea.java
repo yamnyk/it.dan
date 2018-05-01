@@ -25,7 +25,7 @@ public class FindArea {
 
     private static void printAreaOfRectangle(Rectangle ab) {
         if(ab.area() > 0){
-            System.out.printf("Te area of rectangle width = %d, height = %d is: %d",
+            System.out.printf("The area of rectangle width = %d, height = %d is: %d",
                     ab.getWidth(), ab.getHeight(), ab.area());
         } else {
             System.out.println("Uncorrected parameter");
