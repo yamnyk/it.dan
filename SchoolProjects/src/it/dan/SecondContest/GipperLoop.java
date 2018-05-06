@@ -70,6 +70,7 @@ public class GipperLoop {
         Stack<Integer> stack = new Stack<>();
 
         stack.push(S);
+
         visited[S] = true;
 
         while(!stack.isEmpty()){
