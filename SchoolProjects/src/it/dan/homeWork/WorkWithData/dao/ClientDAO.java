@@ -13,7 +13,7 @@ public class ClientDAO {
         Connection connection = null;
         PreparedStatement statement = null;
 
-        String sql = "INSERT INTO item(login, password, first_name, second_name) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO client(login, password, first_name, second_name) VALUES(?,?,?,?)";
 
         try {
             connection = ConnectionToDB.getConnection();
@@ -94,7 +94,7 @@ public class ClientDAO {
         Connection connection = null;
         PreparedStatement statement = null;
 
-        String sql = "DELETE * FROM client WHERE login=?";
+        String sql = "DELETE FROM client WHERE login=?";
 
         try{
             connection = ConnectionToDB.getConnection();

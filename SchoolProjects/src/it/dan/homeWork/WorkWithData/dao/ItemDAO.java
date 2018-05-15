@@ -20,7 +20,7 @@ public class ItemDAO {
 
             statement.setString(1, item.getArticleId());
             statement.setString(2, item.getName());
-            statement.setString(3, item.getPrice().toString());
+            statement.setInt(3, item.getPrice());
 
             statement.executeUpdate();
         }
@@ -49,7 +49,7 @@ public class ItemDAO {
             while(rSet.next()) {
                 item.setPrice(Integer.parseInt(rSet.getString("price")));
                 item.setName(rSet.getString("name"));
-                item.setArticleId(rSet.getString(1));
+                item.setArticleId(rSet.getString("article_id"));
             }
         }
         catch ( SQLException e ){
@@ -71,9 +71,9 @@ public class ItemDAO {
             connection = ConnectionToDB.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, item.getArticleId());
-            statement.setString(2, item.getName());
-            statement.setString(3, item.getPrice().toString());
+            statement.setString(3, item.getArticleId());
+            statement.setString(1, item.getName());
+            statement.setInt(2, item.getPrice());
 
             statement.executeUpdate();
         }
@@ -89,7 +89,7 @@ public class ItemDAO {
         Connection connection = null;
         PreparedStatement statement = null;
 
-        String sql = "DELETE * FROM item WHERE article_id = ?";
+        String sql = "DELETE FROM item WHERE article_id = ?";
 
         try{
             connection = ConnectionToDB.getConnection();

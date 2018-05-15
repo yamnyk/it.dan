@@ -95,7 +95,7 @@ public class OrderDAO {
         Connection connection = null;
         PreparedStatement statement = null;
 
-        String sql = "DELETE * FROM order WHERE order_id = ?";
+        String sql = "DELETE FROM order WHERE order_id = ?";
 
         try{
             connection = ConnectionToDB.getConnection();
