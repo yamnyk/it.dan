@@ -30,7 +30,7 @@ public class SumOfFiveDigitsNumber {
 			sum += number % 10;
 			number = number/10;
 		}
-		System.out.printf("\nSum of digits is %d", sum);
+		System.out.printf("Sum of digits is %d", sum);
 
 	}
 
@@ -67,8 +67,7 @@ public class SumOfFiveDigitsNumber {
 			double digit = Math.random()*10;
 			fiveDigits.append((int)digit);
 		}
-		String result = fiveDigits.toString();
-		return result;
+        return fiveDigits.toString();
 	}
 
 }
