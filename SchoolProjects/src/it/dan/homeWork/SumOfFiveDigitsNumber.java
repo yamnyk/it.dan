@@ -10,10 +10,28 @@ public class SumOfFiveDigitsNumber {
 		
 		System.out.println("____________________");
 		Scanner in1 = new Scanner(inputData());
-		
+
 		usingSplit(in1);
+
+		System.out.println("____________________");
+		Scanner in2 = new Scanner(inputData());
+
+		usingDivideByTen(in2);
 		
 				
+	}
+
+	private static void usingDivideByTen(Scanner in2) {
+		Integer number = in2.nextInt();
+		System.out.printf("Random 5-digits number is %d \n", number);
+		int sum = 0;
+
+		while(number != 0){
+			sum += number % 10;
+			number = number/10;
+		}
+		System.out.printf("\nSum of digits is %d", sum);
+
 	}
 
 	private static void usingSplit(Scanner in) {
@@ -27,7 +45,7 @@ public class SumOfFiveDigitsNumber {
 			System.out.print(digitValue);
 		}
 		
-		System.out.printf("\nSum of digits is %d", sum);
+		System.out.printf("\nSum of digits is %d\n", sum);
 	}
 
 	private static void linearTimeSum(Scanner in) {
