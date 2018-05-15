@@ -115,7 +115,7 @@ public class OrderDAO {
 
     public static List<Order> getClientOrders(String client_id){
         List<Order> orders = new ArrayList<>();
-        //TODO: realisation than gives all orders by clientId
+        //TODO: realisation that gives all orders by clientId
 
         return null;
     }
