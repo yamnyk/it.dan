@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderDAO {
     public static void save(Order order) {
@@ -109,5 +111,12 @@ public class OrderDAO {
         finally{
             ConnectionToDB.closeConnection(statement, connection);
         }
+    }
+
+    public static List<Order> getClientOrders(String client_id){
+        List<Order> orders = new ArrayList<>();
+        //TODO: realisation than gives all orders by clientId
+
+        return null;
     }
 }
