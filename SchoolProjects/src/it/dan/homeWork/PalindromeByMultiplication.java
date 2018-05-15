@@ -19,19 +19,14 @@ public class PalindromeByMultiplication {
 	}
 
 	private static boolean isPalindrome(Integer multiplication) {
-		String multiplString = multiplication.toString();
-		boolean answer = true;
-		
-		for (int indexOfSymbol = 0; indexOfSymbol < multiplString.length(); indexOfSymbol++) {
-			int firstSymbol = multiplString.charAt(indexOfSymbol);
-			int lastSymbol = multiplString.charAt(multiplString.length() - 1 - indexOfSymbol);
-			
-			if (firstSymbol != lastSymbol) {
-				answer =  false;
-			}	
-
+		Integer number = multiplication;
+		Integer reverse = 0;
+		while(number != 0){
+			int temp = number % 10;
+			reverse = reverse * 10 + temp;
+			number = number / 10;
 		}
-		return answer;
+		return multiplication.equals(reverse);
 	}
 
 }
