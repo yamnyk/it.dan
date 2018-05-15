@@ -2,7 +2,7 @@ package it.dan.homeWork.getShapeArea.model;
 
 public class Circle extends MyShape{
 	private int radius;
-	final double pi = Math.PI;
+	private final double pi = Math.PI;
 	
 	public int getRadius() {
 		return radius;
