@@ -14,7 +14,7 @@ public class OrderDAO {
         Connection connection = null;
         PreparedStatement statement = null;
 
-        String sql = "INSERT INTO order(order_id, item_id, amount, client_id) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO public.order (order_id, item_id, amount, client_id) VALUES(?,?,?,?)";
 
         try {
             connection = ConnectionToDB.getConnection();

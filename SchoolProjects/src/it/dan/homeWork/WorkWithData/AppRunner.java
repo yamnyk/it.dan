@@ -32,7 +32,7 @@ public class AppRunner {
 
         order.setOrderId(777);
         order.setItemId("12345");
-        order.setAmount(558);
+        order.setAmount(10);
         order.setClientId("testLogin");
 
         OrderDAO.save(order);
