@@ -11,30 +11,67 @@ public class AppRunner {
 
     public static void main(String[] args) {
 
-        /*Client client = new Client();
+        fillDB(15);
 
-        client.setLogin("testLogin");
-        client.setPassword("12345");
-        client.setFirstName("Alex");
-        client.setSecondName("Ignatenko");
+    }
 
-        ClientDAO.save(client);
+    private static void fillDB(int N) {
+        fillClient(N);
+        fillItem(N);
+        fillOrder(N);
+    }
 
-        Item item = new Item();
+    private static void fillClient(int N) {
+        for (int i = 0; i < N; i++) {
+            Client client = new Client();
 
-        item.setArticleId("12345");
-        item.setName("GogiDall");
-        item.setPrice(150); //price by cents
+            client.setLogin("client_" + i);
+            client.setPassword(randomWord(6,8) + createRandom(999,9999));
+            client.setFirstName(randomWord(5, 9));
+            client.setSecondName(randomWord(7, 11));
 
-        ItemDAO.save(item);*/
+            ClientDAO.save(client);
+        }
+    }
 
-        Order order = new Order();
+    private static void fillItem(int N) {
+        for (int i = 0; i < N; i++) {
+            Item item = new Item();
 
-        order.setOrderId(777);
-        order.setItemId("12345");
-        order.setAmount(10);
-        order.setClientId("testLogin");
+            item.setName(randomWord(5,8));
+            item.setArticleId(Integer.toString(i));
+            item.setPrice(createRandom(99,9999)); //price by cents
 
-        OrderDAO.save(order);
+            ItemDAO.save(item);
+        }
+    }
+
+    private static void fillOrder(int N) {
+        for (int i = 0; i < N; i++) {
+            Order order = new Order();
+
+            order.setOrderId(createRandom(99,9999));
+            order.setItemId(Integer.toString(i));
+            order.setAmount(createRandom(1, 99));
+            order.setClientId("client_" + i);
+
+            OrderDAO.save(order);
+        }
+    }
+
+    private static String randomWord(int min, int max) {
+        String chars = "qwertyuiopasdfghjklzxcvbnm";
+
+        StringBuilder sb = new StringBuilder();
+        int N = createRandom(min, max);
+        for (int i = 0; i < N; i++) {
+            int randomChar = (int) (Math.random() * 10);
+            sb.append(chars.charAt(randomChar));
+        }
+        return sb.toString();
+    }
+
+    private static int createRandom(int min, int max) {
+        return (int) (min + (Math.random() * (max - min + 1)));
     }
 }
