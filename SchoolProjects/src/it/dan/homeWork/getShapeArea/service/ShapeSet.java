@@ -1,4 +1,7 @@
-package it.dan.homeWork.getShapeArea.model;
+package it.dan.homeWork.getShapeArea.service;
+
+import it.dan.homeWork.getShapeArea.model.Circle;
+import it.dan.homeWork.getShapeArea.model.MyShape;
 
 import java.io.FileWriter;
 import java.io.IOException;
