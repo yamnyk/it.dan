@@ -1,25 +1,25 @@
 package it.dan.homeWork.WorkWithData.model;
 
 public class Order {
-    private Integer orderId;
-    private String itemId;
+    private Integer order_id;
+    private String item_id;
     private Integer amount;
-    private String clientId;
+    private String client_id;
 
-    public Integer getOrderId() {
-        return orderId;
+    public Integer getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setOrder_id(Integer order_id) {
+        this.order_id = order_id;
     }
 
-    public String getItemId() {
-        return itemId;
+    public String getItem_id() {
+        return item_id;
     }
 
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
+    public void setItem_id(String item_id) {
+        this.item_id = item_id;
     }
 
     public Integer getAmount() {
@@ -30,11 +30,11 @@ public class Order {
         this.amount = amount;
     }
 
-    public String getClientId() {
-        return clientId;
+    public String getClient_id() {
+        return client_id;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
     }
 }

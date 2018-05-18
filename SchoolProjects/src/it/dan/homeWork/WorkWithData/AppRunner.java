@@ -40,7 +40,7 @@ public class AppRunner {
             Item item = new Item();
 
             item.setName(randomWord(5,8));
-            item.setArticleId(Integer.toString(i));
+            item.setArticle_id(Integer.toString(i));
             item.setPrice(createRandom(99,9999)); //price by cents
 
             ItemDAO.save(item);
@@ -51,10 +51,10 @@ public class AppRunner {
         for (int i = 0; i < N; i++) {
             Order order = new Order();
 
-            order.setOrderId(createRandom(99,9999));
-            order.setItemId(Integer.toString(i));
+            order.setOrder_id(createRandom(99,9999));
+            order.setItem_id(Integer.toString(i));
             order.setAmount(createRandom(1, 99));
-            order.setClientId("client_" + i);
+            order.setClient_id("client_" + i);
 
             OrderDAO.save(order);
         }
