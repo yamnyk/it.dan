@@ -55,7 +55,7 @@ public class ItemDAO extends AbstractDAO<Item>{
     public void update(Item item){
 
 
-        String sql = "UPDATE client SET name = ?, price = =? WHERE article_id = ?";
+        String sql = "UPDATE client SET name = ?, price = ? WHERE article_id = ?";
 
         try(Connection connection = ConnectionToDB.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql)){
