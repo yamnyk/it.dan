@@ -45,7 +45,6 @@ public class OrderDAO extends AbstractDAO<Order>{
                 order.setClient_id(rSet.getString("client_id"));
                 order.setItem_id(rSet.getString("item_id"));
                 order.setAmount(rSet.getInt("amount"));
-
                 return order;
             }
         }

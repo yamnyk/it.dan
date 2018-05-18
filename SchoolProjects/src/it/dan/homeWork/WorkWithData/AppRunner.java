@@ -11,7 +11,7 @@ public class AppRunner {
 
     public static void main(String[] args) {
 
-        fillDB(15);
+//        fillDB(15);
 
 
     }
@@ -31,7 +31,8 @@ public class AppRunner {
             client.setFirstName(randomWord(5, 9));
             client.setSecondName(randomWord(7, 11));
 
-            ClientDAO.save(client);
+            ClientDAO clientDAO = new ClientDAO();
+            clientDAO.save(client);
         }
     }
 
@@ -43,7 +44,8 @@ public class AppRunner {
             item.setArticle_id(Integer.toString(i));
             item.setPrice(createRandom(99,9999)); //price by cents
 
-            ItemDAO.save(item);
+            ItemDAO itemDAO = new ItemDAO();
+            itemDAO.save(item);
         }
     }
 
@@ -56,7 +58,8 @@ public class AppRunner {
             order.setAmount(createRandom(1, 99));
             order.setClient_id("client_" + i);
 
-            OrderDAO.save(order);
+            OrderDAO orderDAO = new OrderDAO();
+            orderDAO.save(order);
         }
     }
 

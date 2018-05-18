@@ -43,12 +43,13 @@ public class ClientDAO extends AbstractDAO<Client>{
                 client.setPassword(rSet.getString(2));
                 client.setFirstName(rSet.getString("first_name"));
                 client.setSecondName(rSet.getString(4));
+                return client;
             }
         }
         catch ( SQLException e ){
             e.printStackTrace();
         }
-        return client;
+        return null;
     }
 
     @Override

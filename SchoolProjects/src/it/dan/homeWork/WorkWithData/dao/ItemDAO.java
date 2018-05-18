@@ -43,12 +43,13 @@ public class ItemDAO extends AbstractDAO<Item>{
                 item.setPrice(Integer.parseInt(rSet.getString("price")));
                 item.setName(rSet.getString("name"));
                 item.setArticle_id(rSet.getString("article_id"));
+                return item;
             }
         }
         catch ( SQLException e ){
             e.printStackTrace();
         }
-        return item;
+        return null;
     }
 
     @Override
