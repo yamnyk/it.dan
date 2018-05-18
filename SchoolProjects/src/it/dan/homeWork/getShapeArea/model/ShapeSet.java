@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShapeSet<T extends MyShape> extends ArrayList {
-    public void setToXml(ShapeSet<T> shapeSet, String filePath){
-
+    public void toXml(ShapeSet<T> shapeSet, String filePath){
         for (Object circle : shapeSet) {
             Circle c = (Circle) circle;
 
