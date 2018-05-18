@@ -10,7 +10,6 @@ public class ClientDAOTest {
 
     @Test
     public void delete() {
-
         Client client = new Client();
 
         client.setLogin("GogiZurabovich");
