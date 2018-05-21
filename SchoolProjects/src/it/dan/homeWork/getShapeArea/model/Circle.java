@@ -20,7 +20,7 @@ public class Circle extends MyShape{
 	}
 
 	@Override
-	public int area() {
+	public int getArea() {
 		double findArea = pi * Math.pow(radius, 2);
 		return (int) findArea;
 	}

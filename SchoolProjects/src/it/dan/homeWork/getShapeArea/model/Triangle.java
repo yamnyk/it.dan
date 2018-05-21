@@ -28,7 +28,7 @@ public class Triangle extends MyShape{
 	}
 
 	@Override
-	public int area() {
+	public int getArea() {
 		int s = (aSide + bSide + cSide) / 2;
 		if(s > aSide && s > bSide && s > cSide){
 			return (int) Math.sqrt(s * (s - aSide) * (s - bSide) * (s - cSide));

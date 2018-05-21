@@ -28,7 +28,7 @@ public class Rectangle extends MyShape {
     }
 
     @Override
-    public int area() {
+    public int getArea() {
         return height * width;
     }
 }

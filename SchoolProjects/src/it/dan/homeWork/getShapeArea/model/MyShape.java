@@ -1,5 +1,5 @@
 package it.dan.homeWork.getShapeArea.model;
 
 public abstract class MyShape {
-	public abstract int area();
+	public abstract int getArea();
 }
