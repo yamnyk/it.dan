@@ -12,25 +12,32 @@ public class XMLSerializer implements Serializer {
     @Override
     public void serialize(Object set, String appDir, String fileName) {
         //constructing main string will be placed at the top of file
-        String mainStr = "<?xml version=\"2.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n";
+        String mainStr = "<?xml version=\"2.11\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n";
         //generating filePath
         String filePath = getFilePath(appDir, fileName);
 
-        /*try (FileWriter writer = new FileWriter(filePath);) {
+        try (FileWriter writer = new FileWriter(filePath);) {
             writer.write(mainStr); //writing down main string to the created file
 
-            if(set.getClass().getName().equals("it.dan.homeWork.getShapeArea.service.ShapeSet")) {
+            //TODO: write down the area of shape set to the xml file
+            /*writer.write("<ShapeSet>\n"+
+                    "        <ShapeSetArea>"+
+                    set.getClass()+"</ShapeSetArea>");*/
+
+            Field shapeSetField = set.getClass().getDeclaredField("set");
+
+            if(shapeSetField.getType().equals(ArrayList.class)) {
+                ArrayList<MyShape> list = (ArrayList<MyShape>) shapeSetField.get(set);
                 //iterate for each shape in ShapeSet and writing its parameters
-                for (//TODO: foreach expression to iterate each Shape in the field "set" in class ShapeSet) {
-                    writer.write(xmlText(iterShape));
+                for (Object value : list) {
+                    writer.write(xmlText(value));
                 }
+                /*writer.write("</ShapeSet>\n");*/
                 writer.flush();
             }
-        } catch (IOException | NoSuchFieldException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }*/
-
-
+        }
     }
 
     private static String xmlText(Object obj) {
@@ -45,7 +52,7 @@ public class XMLSerializer implements Serializer {
         //iterate for each field to write down its name and value
         for (Field i : fields) {
             try {
-                //                 open tag "fieldName"      field value       close tag "fieldName"
+                //                   open tag "fieldName"      field value       close tag "fieldName"
                 str.append("        <" + i.getName() + ">" + i.getInt(obj) + "</" + i.getName() + ">\n");
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

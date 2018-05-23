@@ -8,9 +8,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-public abstract class ShapeSet extends MyShape {
+public class ShapeSet extends MyShape {
 
-    public ArrayList<MyShape> set;
+    public ArrayList<MyShape> set = new ArrayList<>();
 
     @Override
     public int getArea() {
