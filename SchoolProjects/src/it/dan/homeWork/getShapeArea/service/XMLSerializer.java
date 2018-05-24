@@ -12,7 +12,7 @@ public class XMLSerializer implements Serializer {
     @Override
     public void serialize(Object set, String appDir, String fileName) {
         //constructing main string will be placed at the top of file
-        String mainStr = "<?xml version=\"2.11\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n";
+        String mainStr = "<?xml version=\"2.13\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n";
         //generating filePath
         String filePath = getFilePath(appDir, fileName);
 
