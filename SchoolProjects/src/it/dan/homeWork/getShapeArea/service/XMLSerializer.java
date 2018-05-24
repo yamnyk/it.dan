@@ -3,7 +3,6 @@ package it.dan.homeWork.getShapeArea.service;
 import it.dan.homeWork.getShapeArea.model.MyShape;
 
 import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

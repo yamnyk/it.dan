@@ -1,11 +1,7 @@
-package it.dan.homeWork.getShapeArea.service;
+package it.dan.homeWork.getShapeArea.model;
 
 import it.dan.homeWork.getShapeArea.model.MyShape;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class ShapeSet extends MyShape {

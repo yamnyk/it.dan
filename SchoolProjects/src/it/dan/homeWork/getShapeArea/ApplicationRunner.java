@@ -3,7 +3,7 @@ package it.dan.homeWork.getShapeArea;
 import it.dan.homeWork.getShapeArea.model.Circle;
 import it.dan.homeWork.getShapeArea.model.Rectangle;
 import it.dan.homeWork.getShapeArea.model.Triangle;
-import it.dan.homeWork.getShapeArea.service.ShapeSet;
+import it.dan.homeWork.getShapeArea.model.ShapeSet;
 import it.dan.homeWork.getShapeArea.service.XMLSerializer;
 
 public class ApplicationRunner {
