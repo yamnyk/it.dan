@@ -19,10 +19,8 @@ public class XMLSerializer implements Serializer {
         try (FileWriter writer = new FileWriter(filePath);) {
             writer.write(mainStr); //writing down main string to the created file
 
-            //TODO: write down the area of shape set to the xml file
-            /*writer.write("<ShapeSet>\n"+
-                    "        <ShapeSetArea>"+
-                    set.getClass()+"</ShapeSetArea>");*/
+            writer.write("<ShapeSet>\n"+ "<ShapeSetArea>"
+                    + set.getClass().getMethod("getArea").invoke(set)+"</ShapeSetArea>\n\n");
 
             Field shapeSetField = set.getClass().getDeclaredField("set");
 
